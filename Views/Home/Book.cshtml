@@ -1,0 +1,22 @@
+﻿@model IEnumerable<MediaMattersCCV2.Models.book.Book>
+@inject MediaMattersCCV2.Models.book.IBook BookRepo;
+@{
+    ViewData["Title"] = "Book";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<h1>Books I Enjoy</h1>
+<h4>Note: I don't know if these are my favorite books, but I know I really did enjoy them and I at least own all of them</h4>
+
+<div>
+    @foreach (MediaMattersCCV2.Models.book.Book books in Model)
+    {
+        <p><strong>Title: </strong>@books.bTitle</p>
+        <img src="@Url.Content(books.image)" height="280" width="220" />
+        <p><strong>Author: </strong>@books.aFirstName @books.aLastName</p>
+        <p><strong>Edition: </strong>@books.edition <strong>ISBN: </strong>@books.ISBN</p>
+        <p><strong>Publication Date: </strong>@books.pDate</p>
+        <p><strong>Notes: </strong>@books.notes</p><br />
+    }
+</div>

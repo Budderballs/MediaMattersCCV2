@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <ul> @Html.ActionLink("Home", "Index")</ul>
+            <ul> @Html.ActionLink("Albums", "Album")</ul>
+            <ul> @Html.ActionLink("Books", "Book")</ul>
+            <ul> @Html.ActionLink("Games", "Game")</ul>
+        </nav>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

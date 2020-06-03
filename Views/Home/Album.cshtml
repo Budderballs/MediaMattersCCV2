@@ -1,0 +1,19 @@
+﻿@model IEnumerable<MediaMattersCCV2.Models.album.Album>
+@inject MediaMattersCCV2.Models.album.IAlbum AlbumRepo
+@{
+    ViewData["Title"] = "Album";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Albums I Listen To</h1>
+<div>
+    @foreach (MediaMattersCCV2.Models.album.Album album in Model)
+    {
+
+        <p><strong>Title: </strong>@album.aTitle</p>
+        <img src="@Url.Content(@album.image)" height="150" width="150" />
+        <p><strong>Artist: </strong>@album.artist</p>
+        <p><strong>Notes: </strong>@album.notes</p>
+        <br />
+    }
+</div>

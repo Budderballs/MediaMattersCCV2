@@ -1,0 +1,20 @@
+﻿@model IEnumerable<MediaMattersCCV2.Models.game.Game>
+@inject MediaMattersCCV2.Models.game.IGame GameRepo
+@{
+    ViewData["Title"] = "Game";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Games I Play <strong class="font-italic">Most</strong> of The Time</h1>
+
+<div>
+    @foreach (MediaMattersCCV2.Models.game.Game game in Model)
+    {
+        <p><strong>Title: </strong>@game.gTitle</p>
+        <img src="@Url.Content(game.image)" height="300" width="250" />
+        <p><strong>Dev: </strong>@game.dev</p>
+        <p><strong>Release Date: </strong>@game.releaseDate</p>
+        <p><strong>Notes: </strong>@game.notes</p>
+        <br />
+    }
+</div>
